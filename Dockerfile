@@ -8,9 +8,6 @@ RUN apt-get -yq install autoconf build-essential libusb-1.0-0-dev cmake wget pkg
 # Dependencies for UHD image downloader script
 RUN apt-get -yq install python-mako python-requests 
 
-# Fetching the uhd 3.010.001 driver for our USRP SDR card 
-RUN wget http://files.ettus.com/binaries/uhd/uhd_003.010.001.001-release/uhd-3.10.1.1.tar.gz && tar xvzf uhd-3.10.1.1.tar.gz && cd UHD_3.10.1.1_release && mkdir build && cd build && cmake ../ && make && make install && ldconfig && python /usr/local/lib/uhd/utils/uhd_images_downloader.py
-
 # dependencies
 RUN apt-get -qy install libfftw3-dev libmbedtls-dev libboost-all-dev libconfig++-dev libsctp-dev
 
